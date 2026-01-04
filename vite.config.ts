@@ -2,10 +2,10 @@ import { defineConfig } from "vite";
 import type { UserConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
-
+import tailwindcss from '@tailwindcss/vite'
 // Vitest config is not part of Vite types, so we cast
 const config: UserConfig & { test?: any } = {
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
