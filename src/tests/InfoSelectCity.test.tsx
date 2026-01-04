@@ -56,7 +56,7 @@ describe("Info component (City + Station selects)", () => {
   beforeEach(() => {
     vi.clearAllMocks();
 
-    global.fetch = vi.fn(() =>
+    globalThis.fetch = vi.fn(() =>
       Promise.resolve({
         ok: true,
         json: () => Promise.resolve(stations),
