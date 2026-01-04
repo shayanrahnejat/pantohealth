@@ -3,6 +3,16 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import useMap from "@/store/store";
 
+export const customIcon = L.icon({
+  iconUrl: "public/images/marker-icon.png",
+  iconRetinaUrl: "public/images/marker-icon-2x.png",
+  shadowUrl: "public/images/marker-shadow.png",
+  iconSize: [25, 41],      // default Leaflet size
+  iconAnchor: [12, 41],    // point that corresponds to marker location
+  popupAnchor: [1, -34],   // point from marker where popup opens
+  shadowSize: [41, 41],    // default shadow size
+});
+
 export default function Map() {
   const city: string = useMap((state) => state.current);
   const station: String = useMap((state) => state.station);
@@ -34,12 +44,12 @@ export default function Map() {
 
     if (city === "all") {
       coords.forEach(({ name, lat, lng }) => {
-        L.marker([lat, lng]).addTo(map).bindPopup(`<b>${name}</b>`);
+        L.marker([lat, lng], { icon: customIcon }).addTo(map).bindPopup(`<b>${name}</b>`);
       });
     } else {
       coords.forEach(({ city: cityn, name, lat, lng }) => {
         if (cityn == city) {
-          L.marker([lat, lng]).addTo(map).bindPopup(`<b>${name}</b>`);
+          L.marker([lat, lng], { icon: customIcon }).addTo(map).bindPopup(`<b>${name}</b>`);
         }
       });
     }
