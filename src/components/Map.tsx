@@ -4,9 +4,9 @@ import "leaflet/dist/leaflet.css";
 import useMap from "@/store/store";
 
 export const customIcon = L.icon({
-  iconUrl: "public/images/marker-icon.png",
-  iconRetinaUrl: "public/images/marker-icon-2x.png",
-  shadowUrl: "public/images/marker-shadow.png",
+  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
   iconSize: [25, 41],      // default Leaflet size
   iconAnchor: [12, 41],    // point that corresponds to marker location
   popupAnchor: [1, -34],   // point from marker where popup opens
