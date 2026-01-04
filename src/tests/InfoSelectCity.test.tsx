@@ -3,7 +3,6 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, it, vi, beforeEach } from "vitest";
 import Info from "@/components/Info/Info";
-import useMap from "@/store/store";
 
 const setCurrent = vi.fn();
 const setStation = vi.fn();

@@ -5,7 +5,6 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import type { SelectChangeEvent } from "@mui/material/Select";
-import type { Theme } from "@emotion/react";
 import useMap from "@/store/store";
 const ITEM_HEIGHT = 44;
 const ITEM_PADDING_TOP = 4;
@@ -18,13 +17,6 @@ const MenuProps = {
   },
 };
 
-function getStyles(name: string, personName: string[], theme: Theme) {
-  return {
-    fontWeight: personName.includes(name)
-      ? theme?.typography.fontWeightMedium
-      : theme?.typography.fontWeightRegular,
-  };
-}
 
 export default function InfoSelectStation() {
   const [datas, setDatas] = React.useState([]);
